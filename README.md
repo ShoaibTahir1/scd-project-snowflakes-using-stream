@@ -7,31 +7,41 @@ Below is a visual representation of the pipeline:
 
 ![Pipeline Diagram](./Slowlychangingdimension.drawio.png)
 
-## Pipeline Overview
-- **Amazon S3**: Stores the incoming data files.
-- **Snowpipe**: Loads the data from S3 into Snowflake's staging tables automatically.
-- **Snowflake Stream**: Tracks changes (inserts, updates, deletes) in the staging table.
-- **Snowflake Tasks**: Automates the transformation and loading of changes into the final dimension tables.
+# Pipeline Overview
 
-## Key Components
-- **S3**: Source for raw data files.
-- **Snowpipe**: Automated ingestion mechanism into Snowflake.
-- **Streams**: Tracks data changes for SCD implementation.
-- **Tasks**: Scheduled jobs for data processing.
-- **Snowflake Tables**: Target tables storing the dimension data.
+## Amazon S3: 
+Holds raw data files.
+## Snowpipe: 
+Automatically loads data from S3 into Snowflake's staging tables.
+## Snowflake Stream:
+Monitors changes (inserts, updates, deletes) in the staging table.
+## Snowflake Tasks: 
+Automates the processing and loading of data into final dimension tables.
 
-## Use Case
-This project is ideal for scenarios where data is continuously updated and Slowly Changing Dimensions (SCD) need to be tracked and managed in a data warehouse environment.
+# Key Components
+## S3: 
+The source location for raw data.
+## Snowpipe: 
+Automatically ingests data into Snowflake.
+## Streams: 
+Tracks data changes for managing Slowly Changing Dimensions (SCD).
+## Tasks: 
+Automates data processing on a schedule.
+## Snowflake Tables: 
+Stores the final, processed data.
 
-## Technologies Used
-- Amazon S3
-- Snowflake (Snowpipe, Streams, Tasks)
-- Docker
-- Apache NiFi
-- Jupyter Notebook
+# Use Case
+This project is ideal for environments where data is frequently updated, and tracking changes (SCD) is necessary for data warehouse management.
 
-## How to Run
-1. Clone this repository.
-2. Set up your Snowflake environment.
-3. Use the provided scripts to configure Snowpipe, Streams, and Tasks.
-4. Run the pipeline to observe SCD behavior in Snowflake tables.
+# Technologies Used
+Amazon S3 for storage
+Snowflake (with Snowpipe, Streams, and Tasks)
+Docker for containerized applications
+Apache NiFi for data flow management
+Jupyter Notebook for data analysis and scripts
+
+# How to Run the Pipeline
+Clone this project repository.
+Set up your Snowflake environment.
+Use the provided setup scripts to configure Snowpipe, Streams, and Tasks.
+Run the pipeline and monitor the SCD behavior in Snowflake's tables.
